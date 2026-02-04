@@ -67,9 +67,6 @@ bool isAdult = true;
 bool hasID = false;
 
 print(isAdult && hasID); // false
-print(isAdult || hasID); // true
+print(hasID || isAdult); // true
 print(!isAdult);         // false
-
-
-
 }
