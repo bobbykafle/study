@@ -47,7 +47,7 @@ void printList(List<String> iteams){
 }
 
 //Function that takes another function as a parameter (callback example).
-void performActtion(Function action){
+void performActtion(void Function() action){
   action();
 }
 
@@ -123,14 +123,15 @@ String darkmoodeCheck (bool isDarkMode){
 }
 
 //Returns "Welcome" or "Please Login"
-String isLoggedIn (bool isLoggedIn){
+String loginMessage (bool isLoggedIn){
   return isLoggedIn? "Welcome" : "Please Login";
 }
 
 // Print "Login successful" only if both are not null
 // Using named parameters: email and password
  String? loginScreen({String? email, String? password}){
-  (email != null && password != null) ? print("Loging Sucessful") : print("Fail");
+  (email != null && password != null) ? "Loging Sucessful" : "Fail";
+  return null;
  
  }
 
@@ -139,15 +140,6 @@ String isLoggedIn (bool isLoggedIn){
   print("country : $country");
  }
  
-// Returns the sum of all numbers, List<int>
-int sumList(List<int> numbers){
-  int total = 0;
-  for(var num in numbers){
-    total += num;
-  }
-  return total;
-}
-
 //Returns "Loading..." or "Data Loaded", bool isLoading
 String isLoading (bool isLoading){
  return isLoading ? "Loading..." : "Data Loaded"; 
@@ -171,14 +163,68 @@ String  countCheck (int count){
 void intreaction (bool isAllowed, Function action){
   if (isAllowed) return action();
   //interaction(true, () => print("Hello!"));
+}
+
+// Write a function that takes List<int> and prints all numbers
+void printNumbers (List<int> numbers){
+  for(var num in numbers){
+    print(num);
+  }
+ }
+
+ // Write a function that returns the sum of a list
+ int  sumList (List<int> number){
+  int  total = 0;
+   for(var num in number){
+      total += num;
+   }
+   return total;
+ }
+
+// Write a function that returns the largest number in a list
+int largestNumber (List<int> numberss){
+ int largest = numberss[0];
+  for(var num in numberss){
+    if(num > largest){
+      largest = num;
+    }  
+  }
+  return largest;
 
 }
 
+// Write a function that returns only even numbers from a list
+List <int> getEvenNumbers(List<int> numb){
+   List<int> evens = [];
+  for(var num in numb){
+    if(num % 2 == 0){
+      evens.add(num);
+    }
+  }
+  return evens;
+}
 
+// Numbers greater than 10
+ List <int> graterNumb(List<int> numbe){
+  List<int> result = [];
+  for(var num in numbe){
+    if(num > 10){
+      result.add(num);
+    }
+  }
+  return result;
+}
 
-
-
-
+// Count how many numbers are even
+int countNumber(List<int> number){
+  int count = 0;
+  for(var num in number){
+    if(num % 2 == 0){
+      count ++;
+    }
+  }
+  return count;
+}
 
 
 
@@ -200,3 +246,12 @@ void intreaction (bool isAllowed, Function action){
 // What comes in? → parameters
 // What should go out? → return type
 // One function = one job only
+
+//Just print
+//void function(List<T> items)
+
+//// Build a new list
+//List<T> function(List<T> items)
+
+// Count or calculate
+//int function(List<T> items)
